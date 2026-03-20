@@ -10,28 +10,30 @@ public class GameInput : MonoBehaviour
     PlayerInputActions playerInputActions;
         
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    void Awake()
     {
         playerInputActions = new PlayerInputActions();
-        playerInputActions.Enable();
-
+        playerInputActions.Player.Enable();
         playerInputActions.Player.Interact.performed += Interact_performed;
     }
+
+    // void Start()
+    // {
+        
+    // }
 
     private void Interact_performed(InputAction.CallbackContext obj)
     {
         Debug.Log("Entered Interact");
-        if(OnInteractAction != null)
-        {
-            OnInteractAction(this, EventArgs.Empty);
-        }
         
+        OnInteractAction?.Invoke(this, EventArgs.Empty);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        // float blah = playerInputActions.Player.Interact.ReadValue<float>();
+        // Debug.Log(blah);
     }
 
     public Vector3 GetMovementVectorNormalized()

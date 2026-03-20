@@ -43,10 +43,7 @@ public class Player : MonoBehaviour
      private void Update()
     {
         Movement();
-        if (Keyboard.current.eKey.isPressed)
-        {
-            Interaction();
-        }
+        Interaction();
     }
 
     public bool IsWalking()
@@ -121,7 +118,11 @@ public class Player : MonoBehaviour
             {
                 if(clearCounter != selectedCounter) selectedCounter = clearCounter;
                 //Has component
-                clearCounter.Interact();
+                if (Keyboard.current.eKey.IsActuated())
+                {
+                    Debug.Log("interacted");
+                    clearCounter.Interact();
+                }
                 SetSelectedCounter(selectedCounter);
             }
             else

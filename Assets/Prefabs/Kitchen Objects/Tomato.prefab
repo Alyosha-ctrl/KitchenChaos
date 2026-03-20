@@ -131,6 +131,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7973352094774828762}
+  - component: {fileID: 5989750554360162873}
   m_Layer: 0
   m_Name: Tomato
   m_TagString: Untagged
@@ -154,3 +155,16 @@ Transform:
   - {fileID: 4224250477611583914}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5989750554360162873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5748303993397695723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a257bcc9bd56da94fb8a71309bb91aa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::kitchenObject
+  kitchenObjectSO: {fileID: 11400000, guid: 3f87e64d411b1584392d6c2f8d003407, type: 2}

@@ -237,9 +237,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43b62fe861028bf4db567f13ffd33370, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ClearCounter
-  tomatoPrefab: {fileID: 7973352094774828762, guid: 644840dd77cd9dd44908edd82d5caeeb, type: 3}
+  kitchenObjectSO: {fileID: 0}
   spawnPosition: {fileID: 6416375914996970151}
   visual: {fileID: 1087895626637880528}
+  testing: 0
+  second: {fileID: 0}
 --- !u!1001 &5701011419410454043
 PrefabInstance:
   m_ObjectHideFlags: 0
