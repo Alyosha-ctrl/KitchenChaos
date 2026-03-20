@@ -22,7 +22,7 @@ public class ClearCounter : MonoBehaviour
     {
         Debug.Log("Clear Counter");
         // transform.localScale = new Vector3(1.5f, 1.5f, 1.5f);
-        visual.SetActive(true);
+        // visual.SetActive(true);
     }
 
 

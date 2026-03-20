@@ -1,16 +1,32 @@
+using System;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
-
     [SerializeField] private float moveSpeed = 10f;
-
     public GameInput gameInput;
-    private bool isWalking = false;
+    public event EventHandler<OnSelectedCounterChangedEventArgs> OnSelectedCounterChanged;
+    public class OnSelectedCounterChangedEventArgs : EventArgs
+    {
+        public ClearCounter selectedCounter;
+    }
 
+    public static Player Instance {get; private set;}
+
+    private bool isWalking = false;
     private Vector3 lastInteractDir;
+    private ClearCounter selectedCounter;
+
+    private void Awake()
+    {
+        if(Instance != null)
+        {
+            Debug.Log("Error second player");
+        }
+        Instance = this;
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -20,7 +36,7 @@ public class Player : MonoBehaviour
 
     private void GameInput_OnInteractAction(object sender, System.EventArgs e)
     {
-        
+        Interaction();
     }
 
     // Update is called once per frame
@@ -103,9 +119,31 @@ public class Player : MonoBehaviour
             
             if(hit.transform.TryGetComponent(out ClearCounter clearCounter))
             {
+                if(clearCounter != selectedCounter) selectedCounter = clearCounter;
                 //Has component
                 clearCounter.Interact();
+                SetSelectedCounter(selectedCounter);
+            }
+            else
+            {
+                selectedCounter = null;
+                SetSelectedCounter(null);
             }
         }
+        else
+        {
+            selectedCounter = null;
+            SetSelectedCounter(null);
+        }
+    }
+
+    private void SetSelectedCounter(ClearCounter selectedCounter)
+    {
+        this.selectedCounter = selectedCounter;
+        OnSelectedCounterChanged?.Invoke(this, new OnSelectedCounterChangedEventArgs
+                {
+                    selectedCounter = selectedCounter
+                });
+
     }
 }
