@@ -14,11 +14,12 @@ public class ContainerCounterVisual : MonoBehaviour
 
     void Start()
     {
-        containerCounter.OnPlayerGrabbedObject += On_Grabbed;
+        containerCounter.OnPlayerGrabbedObject += ContainerCounter_OnPlayerGrabbedObject;
     }
 
-    private void On_Grabbed(object sender, System.EventArgs e)
+    private void ContainerCounter_OnPlayerGrabbedObject(object sender, EventArgs e)
     {
+        Debug.Log("Something Grabbed");
         animator.SetTrigger(OPEN_CLOSE);
     }
 
