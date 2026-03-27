@@ -118,9 +118,11 @@ public class Player : MonoBehaviour, IKitchenObjectParent
             
             if(hit.transform.TryGetComponent(out BaseCounter clearCounter))
             {
-                if(clearCounter != selectedCounter) selectedCounter = clearCounter;
+                if(clearCounter != selectedCounter) {
+                    selectedCounter = clearCounter;
+                }
                 //Has component
-                if (Keyboard.current.eKey.IsActuated())
+                if (Keyboard.current.eKey.wasPressedThisFrame)
                 {
                     Debug.Log("interacted");
                     clearCounter.Interact(this);

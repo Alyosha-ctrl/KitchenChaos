@@ -271,6 +271,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7816906318471787887, guid: 9a9137fa2b035d34e881701d2c178192, type: 3}
   m_PrefabInstance: {fileID: 7488037144565904958}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1651454920101899480 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8143070647044102886, guid: 9a9137fa2b035d34e881701d2c178192, type: 3}
+  m_PrefabInstance: {fileID: 7488037144565904958}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &6366727697509028500 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4589716710238282922, guid: 9a9137fa2b035d34e881701d2c178192, type: 3}
@@ -288,10 +293,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 715db28ca24bd2342bda77d5adc62d7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SelectedCounterVisual
-  clearCounter: {fileID: 0}
-  visual: {fileID: 833694785717109585}
+  baseCounter: {fileID: 957620647200479173}
+  visual:
+  - {fileID: 833694785717109585}
+  - {fileID: 1651454920101899480}
+  - {fileID: 7137125326278129973}
+  - {fileID: 7387749984064451283}
 --- !u!4 &6366727697509028501 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4589716710238282923, guid: 9a9137fa2b035d34e881701d2c178192, type: 3}
+  m_PrefabInstance: {fileID: 7488037144565904958}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7137125326278129973 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 353237590725857035, guid: 9a9137fa2b035d34e881701d2c178192, type: 3}
+  m_PrefabInstance: {fileID: 7488037144565904958}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7387749984064451283 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 102550813385737453, guid: 9a9137fa2b035d34e881701d2c178192, type: 3}
   m_PrefabInstance: {fileID: 7488037144565904958}
   m_PrefabAsset: {fileID: 0}

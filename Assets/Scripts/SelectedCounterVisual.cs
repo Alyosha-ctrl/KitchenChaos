@@ -5,9 +5,9 @@ public class SelectedCounterVisual : MonoBehaviour
 {
 
 
-    [SerializeField] private ClearCounter clearCounter;
+    [SerializeField] private BaseCounter baseCounter;
 
-    [SerializeField] private GameObject visual;
+    [SerializeField] private GameObject[] visual;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -16,7 +16,7 @@ public class SelectedCounterVisual : MonoBehaviour
 
     private void Instance_OnSelectedCounterChanged(object sender, Player.OnSelectedCounterChangedEventArgs e)
     {
-        if(e.selectedCounter == clearCounter)
+        if(e.selectedCounter == baseCounter)
         {
             Show();
         }
@@ -28,12 +28,19 @@ public class SelectedCounterVisual : MonoBehaviour
 
     private void Show()
     {
-        visual.SetActive(true);
+        foreach(GameObject visual2 in visual)
+        {
+            visual2.SetActive(true);
+        }
+        
     }
 
     private void Hide()
     {
-        visual.SetActive(false);
+        foreach(GameObject visual2 in visual)
+        {
+            visual2.SetActive(false);
+        }
     }
 
     // Update is called once per frame
