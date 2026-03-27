@@ -11,14 +11,14 @@ public class Player : MonoBehaviour, IKitchenObjectParent
     public event EventHandler<OnSelectedCounterChangedEventArgs> OnSelectedCounterChanged;
     public class OnSelectedCounterChangedEventArgs : EventArgs
     {
-        public ClearCounter selectedCounter;
+        public BaseCounter selectedCounter;
     }
 
     public static Player Instance {get; private set;}
 
     private bool isWalking = false;
     private Vector3 lastInteractDir;
-    private ClearCounter selectedCounter;
+    private BaseCounter selectedCounter;
     private kitchenObject kitchenObject;
 
     private void Awake()
@@ -116,7 +116,7 @@ public class Player : MonoBehaviour, IKitchenObjectParent
         if (canInteract)
         {
             
-            if(hit.transform.TryGetComponent(out ClearCounter clearCounter))
+            if(hit.transform.TryGetComponent(out BaseCounter clearCounter))
             {
                 if(clearCounter != selectedCounter) selectedCounter = clearCounter;
                 //Has component
@@ -140,7 +140,7 @@ public class Player : MonoBehaviour, IKitchenObjectParent
         }
     }
 
-    private void SetSelectedCounter(ClearCounter selectedCounter)
+    private void SetSelectedCounter(BaseCounter selectedCounter)
     {
         this.selectedCounter = selectedCounter;
         OnSelectedCounterChanged?.Invoke(this, new OnSelectedCounterChangedEventArgs
