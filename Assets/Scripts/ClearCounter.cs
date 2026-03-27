@@ -29,7 +29,10 @@ public class ClearCounter : BaseCounter
         }
         else
         {
-            
+            if (!player.HasKitchenObject())
+            {
+                GetKitchenObject().SetIKitchenObjectParent(player);
+            }
         }
     }
     
