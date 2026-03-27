@@ -71,7 +71,7 @@ public class Player : MonoBehaviour, IKitchenObjectParent
         if (!canMove)
         {
             Vector3 moveDirX = new Vector3(moveDir.x, 0f, 0f).normalized;
-            canMove = !Physics.CapsuleCast(transform.position, transform.position + Vector3.up*2, playerWidth, moveDirX, moveSpeed*Time.deltaTime);
+            canMove = moveDir.x!= 0 && !Physics.CapsuleCast(transform.position, transform.position + Vector3.up*2, playerWidth, moveDirX, moveSpeed*Time.deltaTime);
 
             if (canMove)
             {
@@ -80,7 +80,7 @@ public class Player : MonoBehaviour, IKitchenObjectParent
             else
             {
                 Vector3 moveDirZ = new Vector3(0f, 0f, moveDir.z).normalized;
-                canMove = !Physics.CapsuleCast(transform.position, transform.position + Vector3.up*2, playerWidth, moveDirZ, moveSpeed*Time.deltaTime);
+                canMove = moveDir.z != 0 &&!Physics.CapsuleCast(transform.position, transform.position + Vector3.up*2, playerWidth, moveDirZ, moveSpeed*Time.deltaTime);
 
                 if (canMove)
                 {
@@ -126,6 +126,11 @@ public class Player : MonoBehaviour, IKitchenObjectParent
                 {
                     Debug.Log("interacted");
                     clearCounter.Interact(this);
+                }
+                else if (Keyboard.current.fKey.wasPressedThisFrame)
+                {
+                    Debug.Log("interactedAlternate");
+                    clearCounter?.InteractAlternate(this);
                 }
                 SetSelectedCounter(selectedCounter);
             }

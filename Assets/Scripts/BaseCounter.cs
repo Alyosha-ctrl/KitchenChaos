@@ -29,4 +29,5 @@ public class BaseCounter : MonoBehaviour, IKitchenObjectParent
         return kitchenObject != null;
     }
     public virtual void Interact(Player player){}
+    public virtual void InteractAlternate(Player player){}
 }

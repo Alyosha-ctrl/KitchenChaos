@@ -15,6 +15,10 @@ public class GameInput : MonoBehaviour
         playerInputActions = new PlayerInputActions();
         playerInputActions.Player.Enable();
         playerInputActions.Player.Interact.performed += Interact_performed;
+        //I'm screaming I'm genuinely screaming
+        //Fuck this guy and fuck his events genuinely every time I try to use them they break.
+        //I've done my own events before how is this fucker so venomous
+        // playerInputActions.Player.InteractAlternate.performed += InteractAlteratePerformed;
     }
 
     // void Start()
