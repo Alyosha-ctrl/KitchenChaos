@@ -3,9 +3,10 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Player : MonoBehaviour
+public class Player : MonoBehaviour, IKitchenObjectParent
 {
     [SerializeField] private float moveSpeed = 10f;
+    [SerializeField] private Transform kitchenObjectHoldPoint;
     public GameInput gameInput;
     public event EventHandler<OnSelectedCounterChangedEventArgs> OnSelectedCounterChanged;
     public class OnSelectedCounterChangedEventArgs : EventArgs
@@ -18,6 +19,7 @@ public class Player : MonoBehaviour
     private bool isWalking = false;
     private Vector3 lastInteractDir;
     private ClearCounter selectedCounter;
+    private kitchenObject kitchenObject;
 
     private void Awake()
     {
@@ -121,7 +123,7 @@ public class Player : MonoBehaviour
                 if (Keyboard.current.eKey.IsActuated())
                 {
                     Debug.Log("interacted");
-                    clearCounter.Interact();
+                    clearCounter.Interact(this);
                 }
                 SetSelectedCounter(selectedCounter);
             }
@@ -146,5 +148,30 @@ public class Player : MonoBehaviour
                     selectedCounter = selectedCounter
                 });
 
+    }
+
+    public Transform GetSpawnPosition()
+    {
+        return kitchenObjectHoldPoint;
+    }
+
+    public void SetKitchenObject(kitchenObject kitchenObject)
+    {
+        this.kitchenObject = kitchenObject;
+    }
+
+    public kitchenObject GetKitchenObject()
+    {
+        return kitchenObject;
+    }
+
+    public void ClearKitchenObject()
+    {
+        kitchenObject = null;
+    }
+
+    public bool HasKitchenObject()
+    {
+        return kitchenObject != null;
     }
 }

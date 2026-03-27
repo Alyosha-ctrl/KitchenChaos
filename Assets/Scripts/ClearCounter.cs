@@ -3,8 +3,9 @@ using UnityEngine;
 
 
 
-public class ClearCounter : MonoBehaviour
+public class ClearCounter : MonoBehaviour, IKitchenObjectParent
 {
+
 
     [SerializeField] private KitchenObjectSO kitchenObjectSO;
 
@@ -14,8 +15,6 @@ public class ClearCounter : MonoBehaviour
 
     private kitchenObject kitchenObject;
 
-    public bool testing;
-    public ClearCounter second;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -23,27 +22,25 @@ public class ClearCounter : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        if (testing)
-        {
-            kitchenObject.SetClearCounter(second);
-            testing = false;
-        }
-    }
 
-    public void Interact()
+    public void Interact(Player player)
     {
         // Debug.Log("Clear Counter Touched");
         if(kitchenObject == null)
         {
            Transform tomatoTransform = Instantiate(kitchenObjectSO.prefab, spawnPosition);
             kitchenObject = tomatoTransform.GetComponent<kitchenObject>();
-            kitchenObject.SetClearCounter(this);
+            kitchenObject.SetIKitchenObjectParent(this);
         }
         else
         {
-            Debug.Log(kitchenObject.GetClearCounter());
+            if(!player.HasKitchenObject()) {
+                kitchenObject.SetIKitchenObjectParent(player);
+            }
+            else
+            {
+                Debug.Log("Player Already Has KitchenObject");
+            }
         }
         
         // transform.localScale = new Vector3(1.5f, 1.5f, 1.5f);
