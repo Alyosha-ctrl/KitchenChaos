@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1ef539f80c94154598197e875fd53d3, type: 3}
   m_Name: SlicedTomato
   m_EditorClassIdentifier: Assembly-CSharp::KitchenObjectSO
-  prefab: {fileID: 7973352094774828762, guid: 0185a0f9d2a9ecc4293848759983c55d, type: 3}
+  prefab: {fileID: 7973352094774828762, guid: 5bd73ae11a7d1a548b1066d3f772be1e, type: 3}
   sprite: {fileID: 21300000, guid: c9f08c3c1ae2a364aaeaa3712540b1d4, type: 3}
   objectName: TomatoSlice
