@@ -27,8 +27,7 @@ public class CuttingCounter : BaseCounter
         {
             //Cut
             GetKitchenObject().DestrySelf();
-            Transform kitchenObjectTransform = Instantiate(slices.prefab);
-            kitchenObjectTransform.GetComponent<kitchenObject>().SetIKitchenObjectParent(this);
+            kitchenObject.SpawnKitchenObject(slices, this);
         }
         //Don't cut
     }
