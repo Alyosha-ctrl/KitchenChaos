@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afa6e4698b1f3ae4e9eff6fe5a2a9534, type: 3}
   m_Name: CabbageRecipe
   m_EditorClassIdentifier: Assembly-CSharp::CuttingRecipeSO
-  input: {fileID: 0}
-  output: {fileID: 0}
+  input: {fileID: 11400000, guid: 88789261d0c639a47855bed755601476, type: 2}
+  output: {fileID: 11400000, guid: 1e75ea1cac176aa4caad5f54ff263f60, type: 2}
+  cuttingProgressMax: 5
