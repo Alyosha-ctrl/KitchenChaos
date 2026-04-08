@@ -226,8 +226,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43b62fe861028bf4db567f13ffd33370, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ClearCounter
-  kitchenObjectSO: {fileID: 11400000, guid: 7b794e33d57c48648a674cf05b44d49a, type: 2}
   spawnPosition: {fileID: 6624290501312402567}
+  kitchenObjectSO: {fileID: 11400000, guid: 7b794e33d57c48648a674cf05b44d49a, type: 2}
 --- !u!4 &8456899327736859922 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8627014362542025522, guid: 90d7a05d04307bd4faf4d2ffca0fe486, type: 3}
