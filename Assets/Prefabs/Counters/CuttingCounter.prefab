@@ -94,7 +94,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CuttingCounter
   spawnPosition: {fileID: 5508822850108335328}
-  slices: {fileID: 11400000, guid: 62b1500bdca0a9b469bd57e709f79228, type: 2}
+  cuttingRecipeSOArray:
+  - {fileID: 11400000, guid: cf844dc7557769845ae7ee30d650c1c0, type: 2}
+  - {fileID: 11400000, guid: 997cea61f9792834ab9e1778cd15c869, type: 2}
+  - {fileID: 11400000, guid: 93a894a00eb790b4db47d2a44f20030c, type: 2}
 --- !u!1001 &5340809818453950629
 PrefabInstance:
   m_ObjectHideFlags: 0

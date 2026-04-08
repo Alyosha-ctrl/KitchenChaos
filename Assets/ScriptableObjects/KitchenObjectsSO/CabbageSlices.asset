@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f1ef539f80c94154598197e875fd53d3, type: 3}
-  m_Name: SlicedTomato
+  m_Name: CabbageSlices
   m_EditorClassIdentifier: Assembly-CSharp::KitchenObjectSO
-  prefab: {fileID: 7973352094774828762, guid: 5bd73ae11a7d1a548b1066d3f772be1e, type: 3}
-  sprite: {fileID: 21300000, guid: c9f08c3c1ae2a364aaeaa3712540b1d4, type: 3}
-  objectName: TomatoSlice
+  prefab: {fileID: 7973352094774828762, guid: 70eee8a92a69d97449e28d423c35c0e9, type: 3}
+  sprite: {fileID: 21300000, guid: bee24f07c57157e45a946eed3bfe8b84, type: 3}
+  objectName: CabbageSlices
