@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce7e657c50e5e3342a3bef3dcb631ca3, type: 3}
   m_Name: BurnRecipe
   m_EditorClassIdentifier: Assembly-CSharp::FryingRecipeSO
-  input: {fileID: 11400000, guid: 129dc0b815b53d145b9cb5a3bbd5b71f, type: 2}
-  output: {fileID: 11400000, guid: 64d430aa42308b746bc243516757ead1, type: 2}
-  fryingTimerMax: 3
+  input: {fileID: 11400000, guid: 64d430aa42308b746bc243516757ead1, type: 2}
+  output: {fileID: 11400000, guid: 841600a13d6036a49934117c6482e134, type: 2}
+  fryingTimerMax: 5
