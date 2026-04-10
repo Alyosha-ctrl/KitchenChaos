@@ -378,7 +378,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 715db28ca24bd2342bda77d5adc62d7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SelectedCounterVisual
-  baseCounter: {fileID: 0}
+  baseCounter: {fileID: 6549895796114928832}
   visual:
   - {fileID: 3556896408407327922}
 --- !u!1 &3556896408407327922 stripped
