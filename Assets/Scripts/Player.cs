@@ -122,16 +122,20 @@ public class Player : MonoBehaviour, IKitchenObjectParent
                     selectedCounter = clearCounter;
                 }
                 //Has component
-                if (Keyboard.current.eKey.wasPressedThisFrame)
+                if (KitchenGameManager.Instance.isGamePlaying())
                 {
-                    Debug.Log("interacted");
-                    clearCounter.Interact(this);
+                    if (Keyboard.current.eKey.wasPressedThisFrame)
+                        {
+                            // Debug.Log("interacted");
+                            clearCounter.Interact(this);
+                        }
+                    else if (Keyboard.current.fKey.wasPressedThisFrame)
+                    {
+                        // Debug.Log("interactedAlternate");
+                        clearCounter?.InteractAlternate(this);
+                    }
                 }
-                else if (Keyboard.current.fKey.wasPressedThisFrame)
-                {
-                    Debug.Log("interactedAlternate");
-                    clearCounter?.InteractAlternate(this);
-                }
+                
                 SetSelectedCounter(selectedCounter);
             }
             else
