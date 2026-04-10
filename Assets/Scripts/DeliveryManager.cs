@@ -70,7 +70,7 @@ public class DeliveryManager : MonoBehaviour
                 if (contentsMatch)
                 {
                     waitingRecipeSOList.RemoveAt(i);
-                    Debug.Log("Player Delivered Right Recipe");
+                    Debug.Log("Player Delivered Right Recipe WOOHOO");
                     // OnRecipeSpawned?.Invoke(this, EventArgs.Empty);
                     successesAmount++;
                     Debug.Log(successesAmount);
