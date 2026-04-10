@@ -18,7 +18,7 @@ public class KitchenGameManager : MonoBehaviour
 
     private float waitingToStartTimer = 1f;
     private float countdownTimer = 3f;
-    private float playingTimer = 10f;
+    private float playingTimer = 20f;
     private void Awake()
     {
         Instance = this;
@@ -66,6 +66,11 @@ public class KitchenGameManager : MonoBehaviour
     public bool IsCountdownActive()
     {
         return state == State.CountdownToStart;
+    }
+
+    public bool IsGameOver()
+    {
+        return state == State.GameOver;
     }
 
     public float GetCountDownToStartTimer()
